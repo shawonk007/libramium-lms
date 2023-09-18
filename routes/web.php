@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('guest')->prefix('admin')->group(function () {
+  Route::get('/dashboard', function () {
+    return view('dashboard2');
+  });
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
