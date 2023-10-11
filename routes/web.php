@@ -18,10 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('guest')->prefix('admin')->group(function () {
+Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group(function () {
   Route::get('/dashboard', function () {
     return view('dashboard2');
-  });
+  })->name('admin.dashboard');
 });
 
 Route::get('/dashboard', function () {

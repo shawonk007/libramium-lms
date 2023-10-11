@@ -42,12 +42,12 @@
 
     <ul class="sidebar-nav">
       <li class="sidebar-header">Pages</li>
-      <li class="sidebar-item">
-        <a data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link collapsed">
+      <li class="sidebar-item active">
+        <a class="sidebar-link" href="{{ route('admin.dashboard') }}">
           <i class="align-middle" data-feather="sliders"></i>
           <span class="align-middle">Dashboards</span>
         </a>
-        <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+        {{-- <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
           <li class="sidebar-item">
             <a class="sidebar-link" href="javascript:void(0)">Analytics</a>
           </li>
@@ -61,9 +61,9 @@
               <span class="sidebar-badge badge bg-primary">Pro</span>
             </a>
           </li>
-        </ul>
+        </ul> --}}
       </li>
-      <li class="sidebar-item active">
+      <li class="sidebar-item">
         <a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link">
           <i class="align-middle" data-feather="layout"></i> <span class="align-middle">Pages</span>
         </a>

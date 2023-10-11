@@ -232,7 +232,19 @@
           <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
           <a class="dropdown-item" href="javascript:void(0)"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="javascript:void(0)">Log out</a>
+          <form method="POST" action="{{ route('admin.logout') }}">
+            @csrf
+            <button type="submit" class="dropdown-item">
+              <i class="fas fa-right-from-bracket"></i>
+              <span>{{ __('Log Out') }}</span>
+            </button>
+            {{-- <x-responsive-nav-link :href="route('logout')"
+                    onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                {{ __('Log Out') }}
+            </x-responsive-nav-link> --}}
+          </form>
+          {{-- <a class="dropdown-item" href="javascript:void(0)">Log out</a> --}}
         </div>
       </li>
     </ul>
