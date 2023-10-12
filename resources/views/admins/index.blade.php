@@ -1,19 +1,19 @@
 <x-admin-layout>
 
   <x-slot name="title" >
-    {{ __('Manage Roles') }}
+    {{ __('Manage Admins') }}
   </x-slot>
 
   <x-slot name="header" >
-    <h1 class="h3 mb-3">{{ __('User Settings') }}</h1>
+    <h1 class="h3 mb-3">{{ __('Users & Members') }}</h1>
   </x-slot>
 
   <section class="row">
     <div class="col-12">
       <div class="card">
         <div class="card-header d-flex align-items-center justify-content-between">
-          <h5 class="card-title mb-0">{{ __('Manage Roles') }}</h5>
-          <a href="{{ route('roles.create') }}" class="btn btn-primary btn-sm">
+          <h5 class="card-title mb-0">{{ __('Manage Administrators') }}</h5>
+          <a href="{{ route('admins.create') }}" class="btn btn-primary btn-sm">
             <i class="fas fa-plus"></i>
             <span class="ps-1">{{ __('Add New') }}</span>
           </a>
@@ -23,33 +23,25 @@
             <thead>
               <tr>
                 <th class="d-none d-xl-table-cell">{{ __('SL') }}</th>
-                <th>{{ __('Title') }}</th>
-                <th class="d-none d-xl-table-cell">{{ __('Slug') }}</th>
-                <th>{{ __('Status') }}</th>
-                <th class="d-none d-xl-table-cell">{{ __('Date Created') }}</th>
+                <th>{{ __('Name of Administrator') }}</th>
+                <th class="d-none d-xl-table-cell">{{ __('Username') }}</th>
+                <th class="d-none d-xl-table-cell">{{ __('Email Address') }}</th>
+                <th class="d-none d-xl-table-cell">{{ __('Date Joined') }}</th>
                 <th width="90px">{{ __('Action') }}</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ( $roles as $role )
+              @foreach ( $admins as $admin )
                 <tr>
                   <td class="d-none d-xl-table-cell">{{ $loop->iteration }}</td>
                   <td>
-                    <strong>{{ $role->title }}</strong>
+                    <strong>{{ $admin->firstname . " " . $admin->lastname }}</strong>
                   </td>
-                  <td class="d-none d-xl-table-cell">{{ $role->slug }}</td>
-                  <td>
-                    @if ($role->status === 1)
-                      <span class="badge bg-success">{{ __('Enable') }}</span>
-                    @elseif($role->status === 0)
-                      <span class="badge bg-danger">{{ __('Disable') }}</span>
-                    @else
-                      <span class="badge bg-secondary">{{ __('Pending') }}</span>
-                    @endif
-                  </td>
-                  <td class="d-none d-xl-table-cell">{{ $role->created_at->diffforhumans() }}</td>
+                  <td class="d-none d-xl-table-cell">{{ $admin->username }}</td>
+                  <td class="d-none d-xl-table-cell">{{ $admin->email }}</td>
+                  <td class="d-none d-xl-table-cell">{{ $admin->created_at->diffforhumans() }}</td>
                   <td class="d-flex align-items-center">
-                    <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-outline-primary btn-sm">
+                    <a href="{{ route('admins.edit', $admin->id) }}" class="btn btn-outline-primary btn-sm">
                       <i class="fas fa-edit"></i>
                     </a>
                     @if ($loop->iteration > 3)

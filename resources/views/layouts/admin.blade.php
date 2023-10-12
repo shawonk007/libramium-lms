@@ -33,6 +33,15 @@
 	  </div>
 	</div>
 	<script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/datatables.js') }}"></script>
+    <script>
+        $(function () {
+          $("#datatables").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+          }).buttons().container().appendTo('#datatables_wrapper .col-md-6:eq(0)');
+        });
+    </script>
     @if (isset($script))
       {{ $script }}
     @endif
