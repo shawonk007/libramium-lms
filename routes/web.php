@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::middleware(['auth:admin', 'verified'])->prefix('admin')->group(function (
   Route::get('/dashboard', function () {
     return view('dashboard2');
   })->name('admin.dashboard');
+  Route::resource('roles', RoleController::class);
 });
 
 Route::get('/dashboard', function () {
