@@ -47,21 +47,6 @@
           <i class="align-middle" data-feather="sliders"></i>
           <span class="align-middle">Dashboards</span>
         </a>
-        {{-- <ul id="dashboards" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="javascript:void(0)">Analytics</a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="javascript:void(0)">E-Commerce
-              <span class="sidebar-badge badge bg-primary">Pro</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="javascript:void(0)">Crypto
-              <span class="sidebar-badge badge bg-primary">Pro</span>
-            </a>
-          </li>
-        </ul> --}}
       </li>
       <li class="sidebar-item">
         <a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link">
@@ -100,6 +85,25 @@
             <a class="sidebar-link" href="javascript:void(0)">Blank Page</a>
           </li>
         </ul>
+      </li>
+      <li class="sidebar-item">
+        <a data-bs-target="#admins" data-bs-toggle="collapse" class="sidebar-link">
+          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Administrators') }}</span>
+        </a>
+        <ul id="admins" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admins.index') }}">{{ __('Manage Admins') }}</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admins.create') }}">{{ __('Add New Admin') }}
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a class="sidebar-link" href="{{ route('roles.index') }}">
+          <i class="align-middle" data-feather="user"></i> <span class="align-middle">{{ ('User Settings') }}</span>
+        </a>
       </li>
       <li class="sidebar-item">
         <a class="sidebar-link" href="pages-profile.html">
