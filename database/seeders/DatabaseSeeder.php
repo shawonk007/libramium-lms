@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder {
             RoleSeeder::class,
             UserSeeder::class,
             AuthorSeeder::class,
+            LanguageSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

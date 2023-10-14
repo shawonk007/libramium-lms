@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -30,6 +31,7 @@ Route::middleware(['auth:admin', 'verified'])->prefix('app')->group(function () 
   Route::resource('roles', RoleController::class);
   Route::resource('users', UserController::class);
   Route::resource('authors', AuthorController::class);
+  Route::resource('languages', LanguageController::class);
 });
 
 // Route::get('/dashboard', function () {
