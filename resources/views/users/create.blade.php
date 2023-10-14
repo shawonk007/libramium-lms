@@ -31,7 +31,7 @@
                 <input type="tel" name="phone" class="form-control" id="phone" placeholder="{{ __('Cell Phone') }}" value="{{ old('phone') }}" required />
               </div>
               <div class="col-12">
-                <input type="email" name="email" class="form-control" id="email" placeholder="{{ __('Email Address') }}" value="{{ old('slug') }}" required />
+                <input type="email" name="email" class="form-control" id="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}" required />
               </div>
               <div class="col-6">
                 <input type="password" name="password" class="form-control" id="password" placeholder="{{ __('Password') }}" value="{{ old('password') }}" required />

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
@@ -28,6 +29,7 @@ Route::middleware(['auth:admin', 'verified'])->prefix('app')->group(function () 
   Route::resource('admins', AdminController::class);
   Route::resource('roles', RoleController::class);
   Route::resource('users', UserController::class);
+  Route::resource('authors', AuthorController::class);
 });
 
 // Route::get('/dashboard', function () {

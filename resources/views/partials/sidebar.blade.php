@@ -17,7 +17,8 @@
           <img src="{{ asset('img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded me-1" alt="Charles Hall" />
         </div>
         <div class="flex-grow-1 ps-2">
-          <a class="sidebar-user-title dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Charles Hall</a>
+          {{-- <a class="sidebar-user-title dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">Charles Hall</a> --}}
+          <a class="sidebar-user-title dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">{{ Auth::guard('admin')->user()->firstname . " " . Auth::guard('admin')->user()->lastname }} </a>
           <div class="dropdown-menu dropdown-menu-start">
             <a class="dropdown-item" href="javascript:void(0)">
               <i class="align-middle me-1" data-feather="user"></i> Profile
@@ -33,9 +34,15 @@
               <i class="align-middle me-1" data-feather="help-circle"></i> Help Center
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:void(0)">Log out</a>
+            <form method="POST" action="{{ route('admin.logout') }}">
+              @csrf
+              <button type="submit" class="dropdown-item">
+                <i class="fas fa-right-from-bracket"></i>
+                <span>{{ __('Log Out') }}</span>
+              </button>
+            </form>
           </div>
-          <div class="sidebar-user-subtitle">Designer</div>
+          <div class="sidebar-user-subtitle">{{ __('Administrator') }}</div>
         </div>
       </div>
     </div>
@@ -83,6 +90,21 @@
           </li>
           <li class="sidebar-item active">
             <a class="sidebar-link" href="javascript:void(0)">Blank Page</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-header">{{ __('Library Management') }}</li>
+      <li class="sidebar-item">
+        <a data-bs-target="#authors" data-bs-toggle="collapse" class="sidebar-link">
+          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Authors') }}</span>
+        </a>
+        <ul id="authors" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('authors.index') }}">{{ __('Manage Authors') }}</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('authors.create') }}">{{ __('Add New Author') }}
+            </a>
           </li>
         </ul>
       </li>
