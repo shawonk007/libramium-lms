@@ -86,6 +86,7 @@
           </li>
         </ul>
       </li>
+      <li class="sidebar-header">{{ __('User Management') }}</li>
       <li class="sidebar-item">
         <a data-bs-target="#admins" data-bs-toggle="collapse" class="sidebar-link">
           <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Administrators') }}</span>
@@ -96,6 +97,20 @@
           </li>
           <li class="sidebar-item">
             <a class="sidebar-link" href="{{ route('admins.create') }}">{{ __('Add New Admin') }}
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a data-bs-target="#users" data-bs-toggle="collapse" class="sidebar-link">
+          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Users & Members') }}</span>
+        </a>
+        <ul id="users" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('users.index') }}">{{ __('Manage Users') }}</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('users.create') }}">{{ __('Add New User') }}
             </a>
           </li>
         </ul>

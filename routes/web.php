@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,12 +21,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:admin', 'verified'])->group(function () {
+Route::middleware(['auth:admin', 'verified'])->prefix('app')->group(function () {
   Route::get('/dashboard', function () {
     return view('dashboard2');
   })->name('admin.dashboard');
   Route::resource('admins', AdminController::class);
   Route::resource('roles', RoleController::class);
+  Route::resource('users', UserController::class);
 });
 
 // Route::get('/dashboard', function () {
