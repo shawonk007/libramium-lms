@@ -108,6 +108,34 @@
           </li>
         </ul>
       </li>
+      <li class="sidebar-item">
+        <a data-bs-target="#languages" data-bs-toggle="collapse" class="sidebar-link">
+          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Languages') }}</span>
+        </a>
+        <ul id="languages" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('languages.index') }}">{{ __('Manage Languages') }}</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('languages.create') }}">{{ __('Add New Language') }}
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a data-bs-target="#genres" data-bs-toggle="collapse" class="sidebar-link">
+          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Genres') }}</span>
+        </a>
+        <ul id="genres" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('genres.index') }}">{{ __('Manage Genres') }}</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('genres.create') }}">{{ __('Add New Genre') }}
+            </a>
+          </li>
+        </ul>
+      </li>
       <li class="sidebar-header">{{ __('User Management') }}</li>
       <li class="sidebar-item">
         <a data-bs-target="#admins" data-bs-toggle="collapse" class="sidebar-link">

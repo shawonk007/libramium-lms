@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder {
             UserSeeder::class,
             AuthorSeeder::class,
             LanguageSeeder::class,
+            GenreSeeder::class,
         ]);
         // \App\Models\User::factory(10)->create();
 

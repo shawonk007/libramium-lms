@@ -21,7 +21,7 @@
 	  <x-sidebar />
 	  <div class="main">
 		<x-navbar />
-		<main class="content">
+		<main class="content p-4">
 		  <div class="container-fluid p-0">
             @if (isset($header))
               {{ $header }}
