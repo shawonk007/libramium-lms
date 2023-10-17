@@ -109,20 +109,6 @@
         </ul>
       </li>
       <li class="sidebar-item">
-        <a data-bs-target="#languages" data-bs-toggle="collapse" class="sidebar-link">
-          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Languages') }}</span>
-        </a>
-        <ul id="languages" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('languages.index') }}">{{ __('Manage Languages') }}</a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('languages.create') }}">{{ __('Add New Language') }}
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="sidebar-item">
         <a data-bs-target="#genres" data-bs-toggle="collapse" class="sidebar-link">
           <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Genres') }}</span>
         </a>
@@ -132,6 +118,34 @@
           </li>
           <li class="sidebar-item">
             <a class="sidebar-link" href="{{ route('genres.create') }}">{{ __('Add New Genre') }}
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a data-bs-target="#categories" data-bs-toggle="collapse" class="sidebar-link">
+          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Categories') }}</span>
+        </a>
+        <ul id="categories" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('categories.index') }}">{{ __('Manage Categories') }}</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('categories.create') }}">{{ __('Add New Category') }}
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a data-bs-target="#languages" data-bs-toggle="collapse" class="sidebar-link">
+          <i class="align-middle" data-feather="users"></i> <span class="align-middle">{{ ('Languages') }}</span>
+        </a>
+        <ul id="languages" class="sidebar-dropdown list-unstyled collapse show" data-bs-parent="#sidebar">
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('languages.index') }}">{{ __('Manage Languages') }}</a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('languages.create') }}">{{ __('Add New Language') }}
             </a>
           </li>
         </ul>
