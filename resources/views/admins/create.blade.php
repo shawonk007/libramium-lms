@@ -19,28 +19,59 @@
           <div class="card-body py-0">
             <div class="row g-3">
               <div class="col-6">
-                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="{{ __('First Name') }}" value="{{ old('firstname') }}" />
+                <label for="firstname">
+                  <span class="fw-bold">{{ __('First Name') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="firstname" class="form-control mt-2" id="firstname" placeholder="{{ __('John') }}" value="{{ old('firstname') }}" />
               </div>
               <div class="col-6">
-                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="{{ __('Last Name') }}" value="{{ old('lastname') }}" required />
+                <label for="lastname">
+                  <span class="fw-bold">{{ __('Last Name') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="lastname" class="form-control mt-2" id="lastname" placeholder="{{ __('Doe') }}" value="{{ old('lastname') }}" required />
               </div>
               <div class="col-6">
-                <input type="text" name="username" class="form-control" id="username" placeholder="{{ __('Username') }}" value="{{ old('username') }}" required />
+                <label for="username">
+                  <span class="fw-bold">{{ __('Username') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="username" class="form-control mt-2" id="username" placeholder="{{ __('john.doe') }}" value="{{ old('username') }}" required />
               </div>
               <div class="col-6">
-                <input type="tel" name="phone" class="form-control" id="phone" placeholder="{{ __('Cell Phone') }}" value="{{ old('phone') }}" required />
+                <label for="phone">
+                  <span class="fw-bold">{{ __('Cell Phone') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="tel" name="phone" class="form-control mt-2" id="phone" placeholder="{{ __('+88 (01X) XX-XXXXXX') }}" value="{{ old('phone') }}" required />
               </div>
               <div class="col-12">
-                <input type="email" name="email" class="form-control" id="email" placeholder="{{ __('Email Address') }}" value="{{ old('email') }}" required />
+                <label for="email">
+                  <span class="fw-bold">{{ __('Email Address') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="email" name="email" class="form-control mt-2" id="email" placeholder="{{ __('john.doe@example.com') }}" value="{{ old('email') }}" required />
               </div>
               <div class="col-6">
-                <input type="password" name="password" class="form-control" id="password" placeholder="{{ __('Password') }}" value="{{ old('password') }}" required />
+                <label for="password">
+                  <span class="fw-bold">{{ __('Password') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="password" name="password" class="form-control mt-2" id="password" placeholder="{{ __('Password') }}" value="{{ old('password') }}" required />
               </div>
               <div class="col-6">
-                <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="{{ __('Confirm Password') }}" value="{{ old('password_confirmation') }}" required />
+                <label for="password_confirmation">
+                  <span class="fw-bold">{{ __('Re-Type Password') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="password" name="password_confirmation" class="form-control mt-2" id="password_confirmation" placeholder="{{ __('Confirm Password') }}" value="{{ old('password_confirmation') }}" required />
               </div>
               <div class="col-12">
-                <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
+                <label for="biography">
+                  <span class="fw-bold">{{ __('Biography') }}</span>
+                </label>
+                <textarea name="description" class="form-control mt-2" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
               </div>
             </div>
           </div>

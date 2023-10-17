@@ -20,42 +20,69 @@
           <div class="card-body py-0">
             <div class="row g-3">
               <div class="col-6">
-                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="{{ __('First Name') }}" value="{{ $user->firstname }}" />
+                <label for="firstname">
+                  <span class="fw-bold">{{ __('First Name') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="firstname" class="form-control mt-2" id="firstname" placeholder="{{ __('First Name') }}" value="{{ $user->firstname }}" />
               </div>
               <div class="col-6">
-                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="{{ __('Last Name') }}" value="{{ $user->lastname }}" required />
+                <label for="lastname">
+                  <span class="fw-bold">{{ __('Last Name') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="lastname" class="form-control mt-2" id="lastname" placeholder="{{ __('Last Name') }}" value="{{ $user->lastname }}" required />
               </div>
               <div class="col-6">
-                <input type="text" name="username" class="form-control" id="username" placeholder="{{ __('Username') }}" value="{{ $user->username }}" required />
+                <label for="username">
+                  <span class="fw-bold">{{ __('Username') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="username" class="form-control mt-2" id="username" placeholder="{{ __('Username') }}" value="{{ $user->username }}" required />
               </div>
               <div class="col-6">
-                <input type="tel" name="phone" class="form-control" id="phone" placeholder="{{ __('Cell Phone') }}" value="{{ $user->phone }}" required />
+                <label for="phone">
+                  <span class="fw-bold">{{ __('Cell Phone') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="tel" name="phone" class="form-control mt-2" id="phone" placeholder="{{ __('Cell Phone') }}" value="{{ $user->phone }}" required />
               </div>
               <div class="col-12">
-                <input type="email" name="email" class="form-control" id="email" placeholder="{{ __('Email Address') }}" value="{{ $user->email }}" required />
+                <label for="email">
+                  <span class="fw-bold">{{ __('Email Address') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="email" name="email" class="form-control mt-2" id="email" placeholder="{{ __('Email Address') }}" value="{{ $user->email }}" required />
               </div>
               <div class="col-12">
-                <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
+                <label for="biography">
+                  <span class="fw-bold">{{ __('Biography') }}</span>
+                </label>
+                <textarea name="description" class="form-control mt-2" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
               </div>
               <div class="col-12">
-                <select name="role_id" class="form-select" id="roleId">
+                <label for="roleId">
+                  <span class="fw-bold">{{ __('User Role') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <select name="role_id" class="form-select mt-2" id="roleId">
                   <option value="">{{ __('-- Choose One --') }}</option>
                   @foreach($roles as $id => $title)
                     <option value="{{ $id }}" {{ $user->role_id == $id ? 'selected' : '' }}>{{ $title }}</option>
                   @endforeach
                 </select>
               </div>
-              <div class="col-5">
-                <label for="createdAt" class="mt-1">{{ __('Profile Created') }}</label>
+              <div class="col-6">
+                <label for="createdAt">
+                  <span class="fw-bold">{{ __('Profile Created') }}</span>
+                </label>
+                <input type="datetime-local" name="created_at" class="form-control mt-2" id="createdAt" placeholder="{{ __('Profile Created') }}" value="{{ $user->created_at }}" disabled />
               </div>
-              <div class="col-7">
-                <input type="datetime-local" name="created_at" class="form-control" id="createdAt" placeholder="{{ __('Profile Created') }}" value="{{ $user->created_at }}" readonly />
-              </div>
-              <div class="col-5">
-                <label for="updatedAt" class="mt-1">{{ __('Last Updated') }}</label>
-              </div>
-              <div class="col-7">
-                <input type="datetime-local" name="updated_at" class="form-control" id="updatedAt" placeholder="{{ __('Last Updated') }}" value="{{ $user->updated_at }}" readonly />
+              <div class="col-6">
+                <label for="updatedAt">
+                  <span class="fw-bold">{{ __('Last Updated') }}</span>
+                </label>
+                <input type="datetime-local" name="updated_at" class="form-control mt-2" id="updatedAt" placeholder="{{ __('Last Updated') }}" value="{{ $user->updated_at }}" disabled />
               </div>
             </div>
           </div>

@@ -19,16 +19,31 @@
           <div class="card-body py-0">
             <div class="row g-3">
               <div class="col-12">
-                <input type="text" name="title" class="form-control" id="title" placeholder="{{ __('Category Title') }}" value="{{ old('title') }}" required />
+                <label for="title">
+                  <span class="fw-bold">{{ __('Title') }}</span>
+                  <span class="text-danger">{{ _('*') }}</span>
+                </label>
+                <input type="text" name="title" class="form-control mt-2" id="title" placeholder="{{ __('Dystopian') }}" value="{{ old('title') }}" required />
               </div>
               <div class="col-12">
-                <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
+                <label for="description">
+                  <span class="fw-bold">{{ __('Description') }}</span>
+                </label>
+                <textarea name="description" class="form-control mt-2" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
               </div>
               <div class="col-6">
-                <input type="text" name="slug" class="form-control" id="slug" placeholder="{{ __('Category Slug') }}" value="{{ old('slug') }}" readonly />
+                <label for="slug">
+                  <span class="fw-bold">{{ __('Slug') }}</span>
+                  <span>{{ _('*') }}</span>
+                </label>
+                <input type="text" name="slug" class="form-control mt-2" id="slug" placeholder="{{ __('dystopian') }}" value="{{ old('slug') }}" readonly />
               </div>
               <div class="col-6">
-                <select name="status" class="form-control" id="status">
+                <label for="status">
+                  <span class="fw-bold">{{ __('Status') }}</span>
+                  <span>{{ _('*') }}</span>
+                </label>
+                <select name="status" class="form-control mt-2" id="status">
                   <option value="">{{ __('-- Choose Status --') }}</option>
                   <option value="1">{{ __('Enable') }}</option>
                   <option value="0">{{ __('Disable') }}</option>

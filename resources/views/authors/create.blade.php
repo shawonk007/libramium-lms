@@ -19,32 +19,58 @@
           <div class="card-body py-0">
             <div class="row g-3">
               <div class="col-12">
-                <input type="text" name="name" class="form-control" id="title" placeholder="{{ __('Full Name') }}" value="{{ old('name') }}" />
+                <label for="title">
+                  <span class="fw-bold">{{ _('Full Name') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="name" class="form-control mt-2" id="title" placeholder="{{ __('Kazi Nazrul Islam') }}" value="{{ old('name') }}" required />
               </div>
               <div class="col-12">
-                <textarea name="biography" class="form-control" id="biography" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('biography') }}</textarea>
+                <label for="biography">
+                  <span class="fw-bold">{{ _('Biography') }}</span>
+                </label>
+                <textarea name="biography" class="form-control mt-2" id="biography" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('biography') }}</textarea>
               </div>
               <div class="col-6">
-                <input type="date" name="birth_date" class="form-control" id="born" placeholder="{{ __('Username') }}" value="{{ old('birth_date') }}" />
+                <label for="born">
+                  <span class="fw-bold">{{ _('Date of Birth') }}</span>
+                </label>
+                <input type="date" name="birth_date" class="form-control mt-2" id="born" value="{{ old('birth_date') }}" />
               </div>
               <div class="col-6">
-                <input type="date" name="death_date" class="form-control" id="died" placeholder="{{ __('Cell Phone') }}" value="{{ old('death_date') }}" />
+                <label for="died">
+                  <span class="fw-bold">{{ _('Date of Death') }}</span>
+                </label>
+                <input type="date" name="death_date" class="form-control mt-2" id="died" value="{{ old('death_date') }}" />
               </div>
               <div class="col-12">
-                <input type="text" name="slug" class="form-control" id="slug" placeholder="{{ __('Author Slug') }}" value="{{ old('slug') }}" readonly required />
+                <label for="place">
+                  <span class="fw-bold">{{ _('Birth Place') }}</span>
+                </label>
+                <textarea name="birth_place" class="form-control mt-2" id="place" cols="30" rows="4" placeholder="{{ __('Type addres here ...') }}">{{ old('birth_place') }}</textarea>
               </div>
               <div class="col-12">
-                <textarea name="birth_place" class="form-control" id="place" cols="30" rows="4" placeholder="{{ __('Type addres here ...') }}">{{ old('birth_place') }}</textarea>
+                <label for="slug">
+                  <span class="fw-bold">{{ _('Slug') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="slug" class="form-control mt-2" id="slug" placeholder="{{ __('kazi-nazrul-islam') }}" value="{{ old('slug') }}" readonly required />
               </div>
               <div class="col-4">
-                <select name="gender" class="form-select" id="gender" >
+                <label for="gender">
+                  <span class="fw-bold">{{ _('Gender') }}</span>
+                </label>
+                <select name="gender" class="form-select mt-2" id="gender" >
                   <option value="">{{ __('-- Choose --') }}</option>
                   <option value="1">{{ __('Male') }}</option>
                   <option value="2">{{ __('Female') }}</option>
                 </select>
               </div>
               <div class="col-4">
-                <select name="religion" class="form-select" id="religion" >
+                <label for="religion">
+                  <span class="fw-bold">{{ _('Religion') }}</span>
+                </label>
+                <select name="religion" class="form-select mt-2" id="religion" >
                   <option value="">{{ __('-- Choose --') }}</option>
                   <option value="1">{{ __('Islam') }}</option>
                   <option value="2">{{ __('Chistian') }}</option>
@@ -55,7 +81,11 @@
                 </select>
               </div>
               <div class="col-4">
-                <select name="status" class="form-select" id="status" >
+                <label for="status">
+                  <span class="fw-bold">{{ _('Status') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <select name="status" class="form-select mt-2" id="status" required >
                   <option value="">{{ __('-- Choose --') }}</option>
                   <option value="1">{{ __('Enable') }}</option>
                   <option value="2">{{ __('Disable') }}</option>

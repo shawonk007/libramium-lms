@@ -20,34 +20,57 @@
           <div class="card-body py-0">
             <div class="row g-3">
               <div class="col-6">
-                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="{{ __('First Name') }}" value="{{ $admin->firstname }}" />
+                <label for="firstname">
+                  <span class="fw-bold">{{ __('First Name') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="firstname" class="form-control mt-2" id="firstname" placeholder="{{ __('John') }}" value="{{ $admin->firstname }}" />
               </div>
               <div class="col-6">
-                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="{{ __('Last Name') }}" value="{{ $admin->lastname }}" required />
+                <label for="lastname">
+                  <span class="fw-bold">{{ __('Last Name') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="lastname" class="form-control mt-2" id="lastname" placeholder="{{ __('Doe') }}" value="{{ $admin->lastname }}" required />
               </div>
               <div class="col-6">
-                <input type="text" name="username" class="form-control" id="username" placeholder="{{ __('Username') }}" value="{{ $admin->username }}" required />
+                <label for="username">
+                  <span class="fw-bold">{{ __('Username') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="text" name="username" class="form-control mt-2" id="username" placeholder="{{ __('john.doe') }}" value="{{ $admin->username }}" required />
               </div>
               <div class="col-6">
-                <input type="tel" name="phone" class="form-control" id="phone" placeholder="{{ __('Cell Phone') }}" value="{{ $admin->phone }}" required />
+                <label for="phone">
+                  <span class="fw-bold">{{ __('Cell Phone') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="tel" name="phone" class="form-control mt-2" id="phone" placeholder="{{ __('+88 (01X) XX-XXXXXX') }}" value="{{ $admin->phone }}" required />
               </div>
               <div class="col-12">
-                <input type="email" name="email" class="form-control" id="email" placeholder="{{ __('Email Address') }}" value="{{ $admin->email }}" required />
+                <label for="email">
+                  <span class="fw-bold">{{ __('Email Address') }}</span>
+                  <span>{{ __('*') }}</span>
+                </label>
+                <input type="email" name="email" class="form-control mt-2" id="email" placeholder="{{ __('john.doe@example.com') }}" value="{{ $admin->email }}" required />
               </div>
               <div class="col-12">
-                <textarea name="description" class="form-control" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
+                <label for="biography">
+                  <span class="fw-bold">{{ __('Biography') }}</span>
+                </label>
+                <textarea name="description" class="form-control mt-2" id="description" cols="30" rows="10" placeholder="{{ __('Type details here ...') }}">{{ old('description') }}</textarea>
               </div>
-              <div class="col-5">
-                <label for="createdAt" class="mt-1">{{ __('Profile Created') }}</label>
+              <div class="col-6">
+                <label for="createdAt">
+                  <span class="fw-bold">{{ __('Profile Created') }}</span>
+                </label>
+                <input type="datetime-local" name="created_at" class="form-control mt-2" id="createdAt" placeholder="{{ __('Profile Created') }}" value="{{ $admin->created_at }}" disabled />
               </div>
-              <div class="col-7">
-                <input type="datetime-local" name="created_at" class="form-control" id="createdAt" placeholder="{{ __('Profile Created') }}" value="{{ $admin->created_at }}" readonly />
-              </div>
-              <div class="col-5">
-                <label for="updatedAt" class="mt-1">{{ __('Last Updated') }}</label>
-              </div>
-              <div class="col-7">
-                <input type="datetime-local" name="updated_at" class="form-control" id="updatedAt" placeholder="{{ __('Last Updated') }}" value="{{ $admin->updated_at }}" readonly />
+              <div class="col-6">
+                <label for="updatedAt">
+                  <span class="fw-bold">{{ __('Last Updated') }}</span>
+                </label>
+                <input type="datetime-local" name="updated_at" class="form-control mt-2" id="updatedAt" placeholder="{{ __('Last Updated') }}" value="{{ $admin->updated_at }}" disabled />
               </div>
             </div>
           </div>
